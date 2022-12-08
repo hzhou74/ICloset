@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/mIvImg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mTag1"
+        app:layout_constraintTop_toBottomOf="@+id/mIvImg"
+        android:layout_marginTop="10dp"
+        android:text="Pls Choose Weather"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/mWTag1"
+        android:background="@drawable/bg_item"
+        android:text="Windy"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mTag1"/>
+
+    <TextView android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/mWTag2"
+        android:background="@drawable/bg_item"
+        android:text="Rainy"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/mWTag1"
+        app:layout_constraintTop_toBottomOf="@+id/mTag1"/>
+
+    <TextView android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/mWTag3"
+        android:background="@drawable/bg_item"
+        android:text="Snowy"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mWTag1"/>
+
+    <TextView android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/mWTag4"
+        android:background="@drawable/bg_item"
+        android:text="Sunny"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/mWTag1"
+        app:layout_constraintTop_toBottomOf="@+id/mWTag1"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mTag2"
+        app:layout_constraintTop_toBottomOf="@+id/mWTag4"
+        android:layout_marginTop="10dp"
+        android:text="Pls Choose Temperature"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/mTTag1"
+        android:background="@drawable/bg_item"
+        android:text="Hot"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mTag2"/>
+
+    <TextView android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/mTTag2"
+        android:background="@drawable/bg_item"
+        android:text="Comfortable"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/mWTag1"
+        app:layout_constraintTop_toBottomOf="@+id/mTag2"/>
+
+    <TextView android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/mTTag3"
+        android:background="@drawable/bg_item"
+        android:text="Cool"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mTTag1"/>
+
+    <TextView android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/mTTag4"
+        android:background="@drawable/bg_item"
+        android:text="Cold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/mWTag1"
+        app:layout_constraintTop_toBottomOf="@+id/mTTag1"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mTag3"
+        app:layout_constraintTop_toBottomOf="@+id/mTTag4"
+        android:layout_marginTop="10dp"
+        android:text="Pls Choose Type "
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:id="@+id/mTypeTag1"
+        android:background="@drawable/bg_item"
+        android:text="Top"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mTag3"/>
+
+    <TextView android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:id="@+id/mTypeTag2"
+        android:background="@drawable/bg_item"
+        android:text="Bottom"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/mTypeTag1"
+        app:layout_constraintTop_toBottomOf="@+id/mTag3"/>
+
+    <TextView android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:id="@+id/mTypeTag3"
+        android:background="@drawable/bg_item"
+        android:text="Shoe"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/mTypeTag2"
+        app:layout_constraintTop_toBottomOf="@+id/mTag3"/>
+
+    <Button android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="AddToCloset"
+        android:onClick="complete"
+        android:id="@+id/mBtnComplete"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/mBtnCancel"
+        android:text="Cancel"
+        android:onClick="cancel"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toRightOf="@+id/mBtnComplete"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
