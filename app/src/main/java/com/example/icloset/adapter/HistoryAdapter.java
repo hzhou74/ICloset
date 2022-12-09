@@ -53,8 +53,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyHV> {
         if(!TextUtils.isEmpty(bean.getCloth())){
             setImg(bean.getCloth(), holder.mIv1);
         }
-        if(!TextUtils.isEmpty(bean.getTrousers())){
-            setImg(bean.getTrousers(), holder.mIv2);
+        if(!TextUtils.isEmpty(bean.getBottom())){
+            setImg(bean.getBottom(), holder.mIv2);
         }
         if(!TextUtils.isEmpty(bean.getShoes())){
             setImg(bean.getShoes(), holder.mIv3);

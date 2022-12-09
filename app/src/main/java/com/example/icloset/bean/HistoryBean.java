@@ -1,15 +1,15 @@
 package com.example.icloset.bean;
 
 public class HistoryBean {
-    String cloth;
-    String trousers;
+    String top;
+    String bottom;
     String shoes;
     String weather;
     double temp;
 
-    public HistoryBean(String cloth, String trousers, String shoes) {
-        this.cloth = cloth;
-        this.trousers = trousers;
+    public HistoryBean(String top, String bottom, String shoes) {
+        this.top = top;
+        this.bottom = bottom;
         this.shoes = shoes;
     }
 
@@ -30,19 +30,19 @@ public class HistoryBean {
     }
 
     public String getCloth() {
-        return cloth;
+        return top;
     }
 
-    public void setCloth(String cloth) {
-        this.cloth = cloth;
+    public void setCloth(String top) {
+        this.top = top;
     }
 
-    public String getTrousers() {
-        return trousers;
+    public String getBottom() {
+        return bottom;
     }
 
-    public void setTrousers(String trousers) {
-        this.trousers = trousers;
+    public void setBottom(String bottom) {
+        this.bottom = bottom;
     }
 
     public String getShoes() {

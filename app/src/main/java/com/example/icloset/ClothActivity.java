@@ -58,17 +58,17 @@ public class ClothActivity extends BaseActivity {
     public void setData(){
         List<RecordBean> data = SharePerferenceUtils.getRecordList(this);
         List<RecordBean> clothList = new ArrayList<>();
-        List<RecordBean> trousersList = new ArrayList<>();
+        List<RecordBean> bottomsList = new ArrayList<>();
         List<RecordBean> shoesList = new ArrayList<>();
         List<RecordBean> otherList = new ArrayList<>();
         List<RecordBean> list = new ArrayList<>();
         for(RecordBean bean:data){
             switch (bean.getTypeTag()){
-                case "Cloth":
+                case "Top":
                     clothList.add(bean);
                     break;
-                case "Trousers":
-                    trousersList.add(bean);
+                case "Bottom":
+                    bottomsList.add(bean);
                     break;
                 case "Shoes":
                     shoesList.add(bean);
@@ -79,7 +79,7 @@ public class ClothActivity extends BaseActivity {
             }
         }
         list.addAll(clothList);
-        list.addAll(trousersList);
+        list.addAll(bottomsList);
         list.addAll(shoesList);
         list.addAll(otherList);
         adapter = new GridAdapter(this,list);
@@ -88,12 +88,13 @@ public class ClothActivity extends BaseActivity {
 
     public void add(View view){
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Choose")
+                .setTitle("Choose from your clothes")
                 .setNeutralButton("Cancel", null)
                 .setNegativeButton("Photo", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         photo();
+
                     }
                 })
                 .setPositiveButton("Camera", new DialogInterface.OnClickListener() {

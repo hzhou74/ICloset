@@ -50,14 +50,14 @@ public class MainActivity extends BaseActivity {
     private String urlStringformat = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=49d459ed61e4eed45169e8100aeb0558&units=metric";
     private WeaBean weaBean;
     List<RecordBean> clothList = new ArrayList<>();
-    List<RecordBean> trousersList = new ArrayList<>();
+    List<RecordBean> bottomsList = new ArrayList<>();
     List<RecordBean> shoesList = new ArrayList<>();
     MyPagerAdapter adapter1;
     MyPagerAdapter adapter2;
     MyPagerAdapter adapter3;
     LayoutInflater inflater;
     int clothIndex = -1;
-    int trousersIndex = -1;
+    int bottomsIndex = -1;
     int shoesIndex = -1;
 
     @Override
@@ -93,7 +93,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                trousersIndex = position;
+                bottomsIndex = position;
             }
 
             @Override
@@ -133,21 +133,21 @@ public class MainActivity extends BaseActivity {
     private void setData() {
         if (weaBean != null) {
             clothList.clear();
-            trousersList.clear();
+            bottomsList.clear();
             shoesList.clear();
             clothIndex = -1;
-            trousersIndex = -1;
+            bottomsIndex = -1;
             shoesIndex = -1;
             String tempTag = Config.getTempTag(weaBean.getMain().getTemp());
             List<RecordBean> allList = SharePerferenceUtils.getRecordList(this);
             for (RecordBean bean : allList) {
                 if (tempTag.equals(bean.getTTag())) {
                     switch (bean.getTypeTag()) {
-                        case "Cloth":
+                        case "Top":
                             clothList.add(bean);
                             break;
-                        case "Trousers":
-                            trousersList.add(bean);
+                        case "Bottom":
+                            bottomsList.add(bean);
                             break;
                         case "Shoes":
                             shoesList.add(bean);
@@ -158,8 +158,8 @@ public class MainActivity extends BaseActivity {
             if (clothList.size() > 0) {
                 clothIndex = 0;
             }
-            if (trousersList.size() > 0) {
-                trousersIndex = 0;
+            if (bottomsList.size() > 0) {
+                bottomsIndex = 0;
             }
             if (shoesList.size() > 0) {
                 shoesIndex = 0;
@@ -167,7 +167,7 @@ public class MainActivity extends BaseActivity {
             adapter1 = new MyPagerAdapter(this, inflater, clothList);
             mViewPager1.setAdapter(adapter1);
 
-            adapter2 = new MyPagerAdapter(this, inflater, trousersList);
+            adapter2 = new MyPagerAdapter(this, inflater, bottomsList);
             mViewPager2.setAdapter(adapter2);
 
             adapter3 = new MyPagerAdapter(this, inflater, shoesList);
@@ -184,30 +184,30 @@ public class MainActivity extends BaseActivity {
 
     private void save() {
         if (weaBean != null) {
-            String cloth = "";
-            String trousers = "";
+            String top = "";
+            String bottom = "";
             String shoes = "";
             if (clothIndex != -1) {
-                cloth = clothList.get(clothIndex).getPath();
+                top = clothList.get(clothIndex).getPath();
             }
-            if (trousersIndex != -1) {
-                trousers = trousersList.get(trousersIndex).getPath();
+            if (bottomsIndex != -1) {
+                bottom = bottomsList.get(bottomsIndex).getPath();
             }
             if (shoesIndex != -1) {
                 shoes = shoesList.get(shoesIndex).getPath();
             }
-            if (TextUtils.isEmpty(cloth) || TextUtils.isEmpty(trousers) || TextUtils.isEmpty(shoes)) {
+            if (TextUtils.isEmpty(top) || TextUtils.isEmpty(bottom) || TextUtils.isEmpty(shoes)) {
                 return;
             }
             List<HistoryBean> historyBeanList = SharePerferenceUtils.getHistoryList(this);
             for (HistoryBean bean : historyBeanList) {
-                if (TextUtils.equals(bean.getCloth(), cloth)
-                        && TextUtils.equals(bean.getTrousers(), trousers)
+                if (TextUtils.equals(bean.getCloth(), top)
+                        && TextUtils.equals(bean.getBottom(), bottom)
                         && TextUtils.equals(bean.getShoes(), shoes)) {
                     return;
                 }
             }
-            HistoryBean historyBean = new HistoryBean(cloth, trousers, shoes);
+            HistoryBean historyBean = new HistoryBean(top, bottom, shoes);
             historyBean.setWeather(weaBean.getWeather().get(0).getMain());
             historyBean.setTemp(weaBean.getMain().getTemp());
             SharePerferenceUtils.putHistoryListItem(this, historyBean);

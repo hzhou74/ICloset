@@ -67,7 +67,7 @@
         android:id="@+id/mTag2"
         app:layout_constraintTop_toBottomOf="@+id/mWTag4"
         android:layout_marginTop="10dp"
-        android:text="Teamperature Tag"
+        android:text="Temperature Tag"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
@@ -126,7 +126,7 @@
         android:layout_height="40dp"
         android:id="@+id/mTypeTag1"
         android:background="@drawable/bg_item"
-        android:text="Cloth"
+        android:text="Top"
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -137,7 +137,7 @@
         android:layout_height="40dp"
         android:id="@+id/mTypeTag2"
         android:background="@drawable/bg_item"
-        android:text="Trousers"
+        android:text="Bottom"
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"

@@ -52,7 +52,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.MyHV> {
             try {
                 Uri uri;
                 File file = new File(data.get(position).getPath());
-                if (Build.VERSION.SDK_INT >= 24) {
+                if (Build.VERSION.SDK_INT >= 27) {
                     uri = FileProvider.getUriForFile(context,
                             "com.example.icloset.fileprovider", file);
                 } else {
@@ -71,7 +71,8 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.MyHV> {
         holder.mTvTypeTag.setText(data.get(position).getTypeTag());
         holder.mImg.setOnClickListener(view -> {
             Intent intent = new Intent(context, AddTagActivity.class);
-            intent.putExtra("position",position);
+//            intent.putExtra("position",position);
+            intent.putExtra("path",data.get(position).getPath());
             context.startActivity(intent);
         });
         holder.mImg.setOnLongClickListener(new View.OnLongClickListener() {

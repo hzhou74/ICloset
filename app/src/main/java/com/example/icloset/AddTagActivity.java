@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ public class AddTagActivity extends BaseActivity {
     TextView mTypeTag1,mTypeTag2,mTypeTag3;
 
     private int position;
+    private String path;
     List<RecordBean> list;
     RecordBean recordBean;
     String wTag;
@@ -66,8 +68,14 @@ public class AddTagActivity extends BaseActivity {
         mTypeTag2.setOnClickListener(view -> setTypeTvBg(mTypeTag2));
         mTypeTag3.setOnClickListener(view -> setTypeTvBg(mTypeTag3));
 
-        position = getIntent().getIntExtra("position",0);
+        path = getIntent().getStringExtra("path");
+//        position = getIntent().getIntExtra("position",0);
         list = SharePerferenceUtils.getRecordList(this);
+        for(int i=0;i<list.size();i++){
+            if(TextUtils.equals(path,list.get(i).getPath())){
+                position = i;
+            }
+        }
         recordBean = list.get(position);
         wTag = recordBean.getWTag();
         tTag = recordBean.getTTag();
@@ -123,10 +131,10 @@ public class AddTagActivity extends BaseActivity {
         }
 
         switch (typeTag+""){
-            case "Cloth":
+            case "Top":
                 setTypeTvBg(mTypeTag1);
                 break;
-            case "Trousers":
+            case "Bottom":
                 setTypeTvBg(mTypeTag2);
                 break;
             case "Shoes":
