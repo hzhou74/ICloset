@@ -87,11 +87,11 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyHV> {
     }
 
     private void setImg(String path,ImageView iv){
-        if(path.contains("icloset_img")){//拍照
+        if(path.contains("icloset_img")){ //photo
             try {
                 Uri uri;
                 File file = new File(path);
-                if (Build.VERSION.SDK_INT >= 24) {
+                if (Build.VERSION.SDK_INT >= 27) {
                     uri = FileProvider.getUriForFile(context,
                             "com.example.icloset.fileprovider", file);
                 } else {

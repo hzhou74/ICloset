@@ -85,7 +85,7 @@ public class AddTagActivity extends BaseActivity {
             try {
                 Uri uri;
                 File file = new File(recordBean.getPath());
-                if (Build.VERSION.SDK_INT >= 24) {
+                if (Build.VERSION.SDK_INT >= 27) {
                     uri = FileProvider.getUriForFile(this,
                             "com.example.icloset.fileprovider", file);
                 } else {

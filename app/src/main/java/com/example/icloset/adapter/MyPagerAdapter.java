@@ -47,7 +47,7 @@ public class MyPagerAdapter extends PagerAdapter {
             try {
                 Uri uri;
                 File file = new File(recordBean.getPath());
-                if (Build.VERSION.SDK_INT >= 24) {
+                if (Build.VERSION.SDK_INT >= 27) {
                     uri = FileProvider.getUriForFile(context,
                             "com.example.icloset.fileprovider", file);
                 } else {
