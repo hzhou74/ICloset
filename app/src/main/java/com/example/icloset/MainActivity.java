@@ -228,9 +228,9 @@ public class MainActivity extends BaseActivity {
             String urlString = String.format(urlStringformat, location.getLatitude(), location.getLongitude());
             dpOkHttp(urlString);
         } else {
-            String urlString = String.format(urlStringformat, 32.8482013, -177.2273002);
+            String urlString = String.format(urlStringformat, 32.848229, -117.227460);
             dpOkHttp(urlString);
-            showToast("Fail to locate GPS");
+            showToast("Fail to locate GPS, Show Weather of La Jolla, San Diego");
         }
 
     }
