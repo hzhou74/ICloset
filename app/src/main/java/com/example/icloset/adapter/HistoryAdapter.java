@@ -50,8 +50,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyHV> {
     @Override
     public void onBindViewHolder(@NonNull MyHV holder, @SuppressLint("RecyclerView") int position) {
         HistoryBean bean = data.get(position);
-        if(!TextUtils.isEmpty(bean.getCloth())){
-            setImg(bean.getCloth(), holder.mIv1);
+        if(!TextUtils.isEmpty(bean.getTop())){
+            setImg(bean.getTop(), holder.mIv1);
         }
         if(!TextUtils.isEmpty(bean.getBottom())){
             setImg(bean.getBottom(), holder.mIv2);

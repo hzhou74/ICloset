@@ -29,11 +29,11 @@ public class HistoryBean {
         this.temp = temp;
     }
 
-    public String getCloth() {
+    public String getTop() {
         return top;
     }
 
-    public void setCloth(String top) {
+    public void setTop(String top) {
         this.top = top;
     }
 

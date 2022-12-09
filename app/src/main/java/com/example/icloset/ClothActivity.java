@@ -57,7 +57,7 @@ public class ClothActivity extends BaseActivity {
 
     public void setData(){
         List<RecordBean> data = SharePerferenceUtils.getRecordList(this);
-        List<RecordBean> clothList = new ArrayList<>();
+        List<RecordBean> topsList = new ArrayList<>();
         List<RecordBean> bottomsList = new ArrayList<>();
         List<RecordBean> shoesList = new ArrayList<>();
         List<RecordBean> otherList = new ArrayList<>();
@@ -65,7 +65,7 @@ public class ClothActivity extends BaseActivity {
         for(RecordBean bean:data){
             switch (bean.getTypeTag()){
                 case "Top":
-                    clothList.add(bean);
+                    topsList.add(bean);
                     break;
                 case "Bottom":
                     bottomsList.add(bean);
@@ -78,7 +78,7 @@ public class ClothActivity extends BaseActivity {
                     break;
             }
         }
-        list.addAll(clothList);
+        list.addAll(topsList);
         list.addAll(bottomsList);
         list.addAll(shoesList);
         list.addAll(otherList);
@@ -126,7 +126,7 @@ public class ClothActivity extends BaseActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-        if (Build.VERSION.SDK_INT >= 24) {
+        if (Build.VERSION.SDK_INT >= 27) {
             currentUri = FileProvider.getUriForFile(this,
                     "com.example.icloset.fileprovider", currentImg);
         } else {
