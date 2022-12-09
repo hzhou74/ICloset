@@ -18,7 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     /**
      * Build Databse：person，collect
-     * _id为key，self-increment
+     * _id: key，self-increment
      * **/
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {

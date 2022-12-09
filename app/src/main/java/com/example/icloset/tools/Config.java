@@ -8,11 +8,11 @@ public class Config {
             case "Windy":
                 tag = "Windy";
                 break;
-            case "Rain":
-                tag = "Rain";
+            case "Rainy":
+                tag = "Rainy";
                 break;
-            case "Snow":
-                tag = "Snow";
+            case "Snowy":
+                tag = "Snowy";
                 break;
             case "Clouds":
             case "Sunny":

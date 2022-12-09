@@ -131,7 +131,6 @@ public class ClothActivity extends BaseActivity {
         } else {
             currentUri = Uri.fromFile(currentImg);
         }
-        // 设置系统相机拍摄照片完成后图片文件的存放地址
         intent.putExtra(MediaStore.EXTRA_OUTPUT, currentUri);
         startActivityForResult(intent, 12);
     }
